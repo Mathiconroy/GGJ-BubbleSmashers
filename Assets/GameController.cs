@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 public class GameController : MonoBehaviour
 {
     public enum GameModes {
-        Normal,
+        RandomButtons,
         DoublePress,
+        InflateDeflate,
     }
 
     public enum GameState {
@@ -112,5 +113,13 @@ public class GameController : MonoBehaviour
 
     public bool IsDoublePress() {
         return gameMode == GameModes.DoublePress;
+    }
+
+    public bool IsInflateDeflate() {
+        return gameMode == GameModes.InflateDeflate;
+    }
+
+    public bool IsRandomButtons() {
+        return gameMode == GameModes.RandomButtons;
     }
 }

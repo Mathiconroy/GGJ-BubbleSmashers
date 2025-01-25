@@ -7,7 +7,8 @@ public class BubbleController : MonoBehaviour
 
     public GameObject bubble;
     public Vector3 upscalingChange;
-    public Vector3 downsclaingChange;
+    public Vector3 downscalingChange;
+    public Vector3 downscalingChangeInflateDeflate;
     private Vector3 minimumScale;
     public Vector3 maximumScale;
     public GameController gameController;
@@ -37,17 +38,19 @@ public class BubbleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.HasGameStarted() == true && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
-            bubble.transform.localScale += downsclaingChange;
+        if (gameController.IsRandomButtons()) {
+            if (gameController.HasGameStarted() == true && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
+                bubble.transform.localScale += downscalingChange;
+            }
         }
     }
 
     public void OnInflateA() {
-        if (gameController.IsDoublePress()) {
-
-        }
         if (gameController.HasGameStarted() == true && gameController.IsAButtonEnabled() == true && HasReachedMaxScale() == false) {
             UpdateScore();
+            bubble.transform.localScale += upscalingChange;
+        }
+        if (gameController.HasGameStarted() && gameController.IsInflateDeflate()) {
             bubble.transform.localScale += upscalingChange;
         }
     }
@@ -56,6 +59,11 @@ public class BubbleController : MonoBehaviour
         if (gameController.HasGameStarted() == true && gameController.IsBButtonEnabled() == true && HasReachedMaxScale() == false) {
             UpdateScore();
             bubble.transform.localScale += upscalingChange;
+        }
+        Debug.Log("OnInflateB called");
+        if (gameController.HasGameStarted() && gameController.IsInflateDeflate()) {
+            Debug.Log("I am deflating");
+            bubble.transform.localScale += downscalingChangeInflateDeflate;
         }
     }
 
