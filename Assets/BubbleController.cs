@@ -16,6 +16,7 @@ public class BubbleController : MonoBehaviour
     public int playerScore = 0;
     public Sprite sprite;
     private SpriteRenderer spriteRenderer;
+    public Sprite inflateDeflateObjectiveSprite;
 
     void Awake() {
         gameController = FindAnyObjectByType<GameController>();

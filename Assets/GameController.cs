@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     public Sprite playerOneSprite;
     public Sprite playerTwoSprite;
     public Vector3 objectiveScaleInflateDeflate;
+    public GameObject playerOneShadow;
+    public GameObject playerTwoShadow;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -141,5 +143,7 @@ public class GameController : MonoBehaviour
         System.Random random = new();
         float newScalingObjectiveValue = 1 + 0.25f * random.Next(1, 12);
         objectiveScaleInflateDeflate = new(newScalingObjectiveValue, newScalingObjectiveValue, 0);
+        playerOneShadow.transform.localScale = objectiveScaleInflateDeflate;
+        playerTwoShadow.transform.localScale = objectiveScaleInflateDeflate;
     }
 }
