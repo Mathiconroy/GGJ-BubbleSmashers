@@ -20,7 +20,8 @@ public class GameController : MonoBehaviour
     public GameButtons enabledButton;
     public GameState currentGameState;
     public InputActionAsset inputActions;
-    float timeToChange = 5.0f;
+    float timeToChange = 3.0f;
+    public float gameDuration = 20.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,11 +33,17 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameDuration -= Time.deltaTime;
         timeToChange -= Time.deltaTime;
         if (timeToChange <= 0) {
-            timeToChange = 5.0f;
+            System.Random random = new();
+            float newNumber = random.Next(1, 2);
+            timeToChange = newNumber;
             ChangeEnabledButton();
             Debug.Log("Input changed.");
+        }
+        if (gameDuration <= 0) {
+            EndGame();
         }
     }
 
@@ -83,5 +90,9 @@ public class GameController : MonoBehaviour
         } else if (randomButton == "Y") {
             enabledButton = GameButtons.Y;
         }
+    }
+
+    public void EndGame() {
+        currentGameState = GameState.GameNonStarted;
     }
 }
