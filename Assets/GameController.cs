@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         currentGameState = GameState.GameStarted;
     }
 
-    public bool IsGameStarted() {
+    public bool HasGameStarted() {
         return currentGameState == GameState.GameStarted;
     }
 }

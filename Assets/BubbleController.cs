@@ -21,13 +21,13 @@ public class BubbleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.IsGameStarted() && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
+        if (gameController.HasGameStarted() && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
             bubble.transform.localScale += downsclaingChange;
         }
     }
 
     public void OnInflate() {
-        if (gameController.IsGameStarted()) {
+        if (gameController.HasGameStarted()) {
             bubble.transform.localScale += upscalingChange;
         }
     }
