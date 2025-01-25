@@ -17,6 +17,9 @@ public class Timer : MonoBehaviour
         GameController gameController = FindAnyObjectByType<GameController>();
         elapsedTime = gameController.gameDuration;
         int seconds = Mathf.FloorToInt(elapsedTime);
-        timerText.text = seconds.ToString();
+        if (seconds <= 0)
+        {
+            timerText.text = seconds.ToString();
+        }
     }
 }
