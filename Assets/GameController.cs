@@ -47,6 +47,10 @@ public class GameController : MonoBehaviour
         if (IsInflateDeflate()) {
             GenerateObjectiveInflateDeflate();
         }
+        if (IsRandomButtons()) {
+            playerOneShadow.SetActive(false);
+            playerTwoShadow.SetActive(false);
+        }
     }
 
     // Update is called once per frame

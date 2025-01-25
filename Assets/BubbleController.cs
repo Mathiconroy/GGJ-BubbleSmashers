@@ -28,6 +28,7 @@ public class BubbleController : MonoBehaviour
             spriteRenderer.sprite = gameController.playerTwoSprite;
         }
         scalingChangeInflateDeflate = new(0.25f, 0.25f, 0);
+        downscalingChange = new(-0.005f, -0.005f, 0);
         maximumScale = new(4, 4, 0);
     }
 
