@@ -24,28 +24,36 @@ public class GameController : MonoBehaviour
     public InputActionAsset inputActions;
     float timeToChange = 3.0f;
     public float gameDuration = 20.0f;
+    public int scorePerPress = 200;
+    public int scoreSubstractionPerFrame = 2;
+    public int[] playerScores;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // enabledButton = GameButtons.A;
+        playerScores[0] = 0;
+        playerScores[1] = 0;
         currentGameState = GameState.GameNonStarted;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameDuration -= Time.deltaTime;
-        timeToChange -= Time.deltaTime;
-        if (timeToChange <= 0) {
-            System.Random random = new();
-            float newNumber = random.Next(1, 2);
-            timeToChange = newNumber;
-            ChangeEnabledButton();
-            Debug.Log("Input changed.");
-        }
-        if (gameDuration <= 0) {
-            EndGame();
+        if (HasGameStarted()) {
+            gameDuration -= Time.deltaTime;
+            timeToChange -= Time.deltaTime;
+            if (timeToChange <= 0) {
+                System.Random random = new();
+                float newNumber = random.Next(1, 2);
+                timeToChange = newNumber;
+                ChangeEnabledButton();
+                Debug.Log("Input changed.");
+            }
+            if (gameDuration <= 0) {
+                EndGame();
+            }
+            SubstractFromScore();
         }
     }
 
@@ -96,5 +104,14 @@ public class GameController : MonoBehaviour
 
     public void EndGame() {
         currentGameState = GameState.GameNonStarted;
+    }
+
+    public void UpdatePlayerScore(int playerIndex) {
+        playerScores[playerIndex] += scorePerPress;
+    }
+
+    public void SubstractFromScore() {
+        playerScores[0] -= scoreSubstractionPerFrame;
+        playerScores[1] -= scoreSubstractionPerFrame;
     }
 }
