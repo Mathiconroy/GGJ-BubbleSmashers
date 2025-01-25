@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,8 +22,6 @@ public class GameController : MonoBehaviour
     float timeToChange = 3.0f;
     public float gameDuration = 20.0f;
     public int scorePerPress = 200;
-    public int playerOneScore = 0;
-    public int playerTwoScore = 0;
     public int scoreSubstractionPerFrame = 2;
     public int[] playerScores;
 
@@ -108,14 +105,6 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerScore(int playerIndex) {
         playerScores[playerIndex] += scorePerPress;
-    }
-
-    public void UpdatePlayerOneScore(int newScore) {
-        playerOneScore = newScore;
-    }
-
-    public void UpdatePlayerTwoScore(int newScore) {
-        playerTwoScore = newScore;
     }
 
     public void SubstractFromScore() {
