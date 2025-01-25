@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerManagerController : MonoBehaviour
 {
     public GameObject[] playerSpawnPoints;
-    public GameObject gameController;
+    public GameController gameController;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +22,7 @@ public class PlayerManagerController : MonoBehaviour
         playerInput.gameObject.transform.position = playerSpawnPoints[playerInput.playerIndex].transform.position;
         Debug.Log(playerInput.playerIndex);
         if (playerInput.playerIndex >= 1) {
-            // gameController.StartGame();
+            gameController.StartGame();
         }
     }
 }
