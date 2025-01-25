@@ -5,6 +5,7 @@ public class PlayerManagerController : MonoBehaviour
 {
     public GameObject[] playerSpawnPoints;
     public GameController gameController;
+    public int minimumPlayerCount = 1;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +22,7 @@ public class PlayerManagerController : MonoBehaviour
     void OnPlayerJoined(PlayerInput playerInput) {
         playerInput.gameObject.transform.position = playerSpawnPoints[playerInput.playerIndex].transform.position;
         Debug.Log(playerInput.playerIndex);
-        if (playerInput.playerIndex >= 1) {
+        if (playerInput.playerIndex >= minimumPlayerCount) {
             gameController.StartGame();
         }
     }

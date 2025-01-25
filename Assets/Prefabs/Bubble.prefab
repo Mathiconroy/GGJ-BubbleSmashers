@@ -105,6 +105,8 @@ MonoBehaviour:
   upscalingChange: {x: 0.5, y: 0.5, z: 0}
   downsclaingChange: {x: -0.005, y: -0.005, z: 0}
   gameController: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerScore: 0
 --- !u!114 &6197039324301961858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

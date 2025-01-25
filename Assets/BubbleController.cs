@@ -10,9 +10,12 @@ public class BubbleController : MonoBehaviour
     private Vector3 minimumScale;
     InputAction jumpAction;
     public GameController gameController;
+    public PlayerInput playerInput;
+    public int playerScore = 0;
 
     void Awake() {
         gameController = FindAnyObjectByType<GameController>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,25 +34,34 @@ public class BubbleController : MonoBehaviour
 
     public void OnInflateA() {
         if (gameController.HasGameStarted() == true && gameController.IsAButtonEnabled() == true) {
+            UpdateScore();
             bubble.transform.localScale += upscalingChange;
         }
     }
 
     public void OnInflateB() {
         if (gameController.HasGameStarted() == true && gameController.IsBButtonEnabled() == true) {
+            UpdateScore();
             bubble.transform.localScale += upscalingChange;
         }
     }
 
     public void OnInflateX() {
         if (gameController.HasGameStarted() == true && gameController.IsXButtonEnabled() == true) {
+            UpdateScore();
             bubble.transform.localScale += upscalingChange;
         }
     }
 
     public void OnInflateY() {
         if (gameController.HasGameStarted() == true && gameController.IsYButtonEnabled() == true) {
+            UpdateScore();
             bubble.transform.localScale += upscalingChange;
         }
+    }
+
+    void UpdateScore() {
+        Debug.Log(playerInput.playerIndex);
+        gameController.UpdatePlayerScore(playerInput.playerIndex);
     }
 }
