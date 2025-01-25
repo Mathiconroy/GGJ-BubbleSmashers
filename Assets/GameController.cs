@@ -109,4 +109,8 @@ public class GameController : MonoBehaviour
         playerScores[0] -= scoreSubstractionPerFrame;
         playerScores[1] -= scoreSubstractionPerFrame;
     }
+
+    public bool IsDoublePress() {
+        return gameMode == GameModes.DoublePress;
+    }
 }

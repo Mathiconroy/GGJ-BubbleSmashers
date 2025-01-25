@@ -102,11 +102,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 4122955543777438328}
-  upscalingChange: {x: 0.5, y: 0.5, z: 0}
-  downsclaingChange: {x: -0.005, y: -0.005, z: 0}
+  upscalingChange: {x: 0.25, y: 0.25, z: 0}
+  downsclaingChange: {x: -0.01, y: -0.01, z: 0}
+  maximumScale: {x: 0, y: 0, z: 0}
   gameController: {fileID: 0}
   playerInput: {fileID: 0}
   playerScore: 0
+  sprite: {fileID: 0}
 --- !u!114 &6197039324301961858
 MonoBehaviour:
   m_ObjectHideFlags: 0
