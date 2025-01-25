@@ -392,8 +392,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 8888755157970208611, guid: aff1c9de4fbd8187f95e532d7aae6040, type: 3}
-  m_SplitScreen: 1
+  m_PlayerPrefab: {fileID: 4122955543777438328, guid: aff1c9de4fbd8187f95e532d7aae6040, type: 3}
+  m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
   m_SplitScreenRect:
@@ -432,6 +432,52 @@ MonoBehaviour:
   playerSpawnPoints:
   - {fileID: 2090404511}
   - {fileID: 2098582037}
+  gameController: {fileID: 812008827}
+--- !u!1 &812008826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812008828}
+  - component: {fileID: 812008827}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &812008827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812008826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9e2a1f801971159ab261ac78fec1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGameState: 1
+--- !u!4 &812008828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812008826}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6306117, y: -0.3210591, z: -0.03626486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090404511
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,3 +549,4 @@ SceneRoots:
   - {fileID: 777148784}
   - {fileID: 2090404512}
   - {fileID: 2098582038}
+  - {fileID: 812008828}
