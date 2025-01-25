@@ -15,9 +15,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inflate",
+                    "name": "InflateA",
                     "type": "Button",
                     "id": "521f0cf4-1a20-40e1-812c-d215b4d86d40",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InflateB",
+                    "type": "Button",
+                    "id": "a6555802-9769-4fd7-a2d6-9ba2bcfb9194",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InflateX",
+                    "type": "Button",
+                    "id": "dce2e132-23eb-4f21-85eb-c66ab59ce1fb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InflateY",
+                    "type": "Button",
+                    "id": "67004114-0093-44a7-8249-d63c280d81c5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -82,23 +109,45 @@
                 },
                 {
                     "name": "",
-                    "id": "5a477b6c-3279-4d7e-9c36-f709fdaa6996",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Inflate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d053ce83-c7f8-48da-af5c-75b1336c0129",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Inflate",
+                    "action": "InflateA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b98113b-f57e-416b-9cb3-560366f620c9",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "InflateB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9acb55c4-f09c-429e-ac8c-9df720a2163c",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "InflateX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8122440b-5038-48f8-9dd5-85494633edd8",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "InflateY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

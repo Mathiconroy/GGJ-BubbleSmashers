@@ -29,8 +29,26 @@ public class BubbleController : MonoBehaviour
         }
     }
 
-    public void OnInflate() {
-        if (gameController.HasGameStarted() == true) {
+    public void OnInflateA() {
+        if (gameController.HasGameStarted() == true && gameController.IsAButtonEnabled() == true) {
+            bubble.transform.localScale += upscalingChange;
+        }
+    }
+
+    public void OnInflateB() {
+        if (gameController.HasGameStarted() == true && gameController.IsBButtonEnabled() == true) {
+            bubble.transform.localScale += upscalingChange;
+        }
+    }
+
+    public void OnInflateX() {
+        if (gameController.HasGameStarted() == true && gameController.IsXButtonEnabled() == true) {
+            bubble.transform.localScale += upscalingChange;
+        }
+    }
+
+    public void OnInflateY() {
+        if (gameController.HasGameStarted() == true && gameController.IsYButtonEnabled() == true) {
             bubble.transform.localScale += upscalingChange;
         }
     }

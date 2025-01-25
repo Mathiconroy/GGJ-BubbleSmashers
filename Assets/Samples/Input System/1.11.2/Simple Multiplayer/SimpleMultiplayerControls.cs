@@ -37,9 +37,36 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inflate"",
+                    ""name"": ""InflateA"",
                     ""type"": ""Button"",
                     ""id"": ""521f0cf4-1a20-40e1-812c-d215b4d86d40"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InflateB"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6555802-9769-4fd7-a2d6-9ba2bcfb9194"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InflateX"",
+                    ""type"": ""Button"",
+                    ""id"": ""dce2e132-23eb-4f21-85eb-c66ab59ce1fb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InflateY"",
+                    ""type"": ""Button"",
+                    ""id"": ""67004114-0093-44a7-8249-d63c280d81c5"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -104,23 +131,45 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5a477b6c-3279-4d7e-9c36-f709fdaa6996"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Inflate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d053ce83-c7f8-48da-af5c-75b1336c0129"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Inflate"",
+                    ""action"": ""InflateA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b98113b-f57e-416b-9cb3-560366f620c9"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""InflateB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9acb55c4-f09c-429e-ac8c-9df720a2163c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""InflateX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8122440b-5038-48f8-9dd5-85494633edd8"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""InflateY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -193,7 +242,10 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
-        m_Player_Inflate = m_Player.FindAction("Inflate", throwIfNotFound: true);
+        m_Player_InflateA = m_Player.FindAction("InflateA", throwIfNotFound: true);
+        m_Player_InflateB = m_Player.FindAction("InflateB", throwIfNotFound: true);
+        m_Player_InflateX = m_Player.FindAction("InflateX", throwIfNotFound: true);
+        m_Player_InflateY = m_Player.FindAction("InflateY", throwIfNotFound: true);
     }
 
     ~@SimpleMultiplayerControls()
@@ -261,13 +313,19 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Teleport;
-    private readonly InputAction m_Player_Inflate;
+    private readonly InputAction m_Player_InflateA;
+    private readonly InputAction m_Player_InflateB;
+    private readonly InputAction m_Player_InflateX;
+    private readonly InputAction m_Player_InflateY;
     public struct PlayerActions
     {
         private @SimpleMultiplayerControls m_Wrapper;
         public PlayerActions(@SimpleMultiplayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
-        public InputAction @Inflate => m_Wrapper.m_Player_Inflate;
+        public InputAction @InflateA => m_Wrapper.m_Player_InflateA;
+        public InputAction @InflateB => m_Wrapper.m_Player_InflateB;
+        public InputAction @InflateX => m_Wrapper.m_Player_InflateX;
+        public InputAction @InflateY => m_Wrapper.m_Player_InflateY;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -280,9 +338,18 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
             @Teleport.started += instance.OnTeleport;
             @Teleport.performed += instance.OnTeleport;
             @Teleport.canceled += instance.OnTeleport;
-            @Inflate.started += instance.OnInflate;
-            @Inflate.performed += instance.OnInflate;
-            @Inflate.canceled += instance.OnInflate;
+            @InflateA.started += instance.OnInflateA;
+            @InflateA.performed += instance.OnInflateA;
+            @InflateA.canceled += instance.OnInflateA;
+            @InflateB.started += instance.OnInflateB;
+            @InflateB.performed += instance.OnInflateB;
+            @InflateB.canceled += instance.OnInflateB;
+            @InflateX.started += instance.OnInflateX;
+            @InflateX.performed += instance.OnInflateX;
+            @InflateX.canceled += instance.OnInflateX;
+            @InflateY.started += instance.OnInflateY;
+            @InflateY.performed += instance.OnInflateY;
+            @InflateY.canceled += instance.OnInflateY;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -290,9 +357,18 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
             @Teleport.started -= instance.OnTeleport;
             @Teleport.performed -= instance.OnTeleport;
             @Teleport.canceled -= instance.OnTeleport;
-            @Inflate.started -= instance.OnInflate;
-            @Inflate.performed -= instance.OnInflate;
-            @Inflate.canceled -= instance.OnInflate;
+            @InflateA.started -= instance.OnInflateA;
+            @InflateA.performed -= instance.OnInflateA;
+            @InflateA.canceled -= instance.OnInflateA;
+            @InflateB.started -= instance.OnInflateB;
+            @InflateB.performed -= instance.OnInflateB;
+            @InflateB.canceled -= instance.OnInflateB;
+            @InflateX.started -= instance.OnInflateX;
+            @InflateX.performed -= instance.OnInflateX;
+            @InflateX.canceled -= instance.OnInflateX;
+            @InflateY.started -= instance.OnInflateY;
+            @InflateY.performed -= instance.OnInflateY;
+            @InflateY.canceled -= instance.OnInflateY;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -358,6 +434,9 @@ public partial class @SimpleMultiplayerControls: IInputActionCollection2, IDispo
     public interface IPlayerActions
     {
         void OnTeleport(InputAction.CallbackContext context);
-        void OnInflate(InputAction.CallbackContext context);
+        void OnInflateA(InputAction.CallbackContext context);
+        void OnInflateB(InputAction.CallbackContext context);
+        void OnInflateX(InputAction.CallbackContext context);
+        void OnInflateY(InputAction.CallbackContext context);
     }
 }
