@@ -16,7 +16,7 @@ public class BubbleController : MonoBehaviour
         jumpAction = InputSystem.actions.FindAction("Inflate");
         // scaleChange = new Vector3(0.0005f, 0.0005f , 0);
         minimumScale = new Vector3(0, 0, 0);
-        Debug.Log(Gamepad.all.ToString());
+        Debug.Log(Gamepad.all.Count);
     }
 
     // Update is called once per frame
