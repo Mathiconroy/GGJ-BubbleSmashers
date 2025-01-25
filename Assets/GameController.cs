@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
     public int[] playerScores;
     public Sprite playerOneSprite;
     public Sprite playerTwoSprite;
+    public Vector3 objectiveScaleInflateDeflate;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -121,5 +122,9 @@ public class GameController : MonoBehaviour
 
     public bool IsRandomButtons() {
         return gameMode == GameModes.RandomButtons;
+    }
+
+    public Vector3 GetObjectiveScale() {
+        return objectiveScaleInflateDeflate;
     }
 }

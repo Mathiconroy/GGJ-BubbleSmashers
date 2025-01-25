@@ -104,6 +104,7 @@ MonoBehaviour:
   bubble: {fileID: 4122955543777438328}
   upscalingChange: {x: 0.25, y: 0.25, z: 0}
   downscalingChange: {x: 0, y: 0, z: 0}
+  upscalingChangeInflateDeflate: {x: 0.25, y: 0.25, z: 0}
   downscalingChangeInflateDeflate: {x: -0.25, y: -0.25, z: 0}
   maximumScale: {x: 0, y: 0, z: 0}
   gameController: {fileID: 0}
