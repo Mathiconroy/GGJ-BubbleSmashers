@@ -1,14 +1,16 @@
-using System;
-using System.Reflection.Emit;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public enum GameModes {
+        Normal,
+        DoublePress,
+    }
+
     public enum GameState {
         GameStarted = 0,
-        GameNonStarted = 1,
+        GameNotStarted = 1,
     }
 
     public enum GameButtons {
@@ -19,6 +21,7 @@ public class GameController : MonoBehaviour
         None,
     }
 
+    public GameModes gameMode;
     public GameButtons enabledButton;
     public GameState currentGameState;
     public InputActionAsset inputActions;
@@ -36,19 +39,18 @@ public class GameController : MonoBehaviour
         // enabledButton = GameButtons.A;
         playerScores[0] = 0;
         playerScores[1] = 0;
-        currentGameState = GameState.GameNonStarted;
+        currentGameState = GameState.GameNotStarted;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         if (HasGameStarted()) {
             gameDuration -= Time.deltaTime;
             timeToChange -= Time.deltaTime;
             if (timeToChange <= 0) {
                 System.Random random = new();
-                float newNumber = random.Next(1, 2);
+                float newNumber = random.Next(1, 3);
                 timeToChange = newNumber;
                 ChangeEnabledButton();
                 Debug.Log("Input changed.");
@@ -89,24 +91,14 @@ public class GameController : MonoBehaviour
     }
 
     public void ChangeEnabledButton() {
-        string[] buttons = {"A", "B", "X", "Y"};
+        GameButtons[] buttons = {GameButtons.A, GameButtons.B, GameButtons.X, GameButtons.Y};
         System.Random random = new();
         int randomIndex = random.Next(0, buttons.Length);
-        string randomButton = buttons[randomIndex];
-        Debug.Log(randomButton);
-        if (randomButton == "A") {
-            enabledButton = GameButtons.A;
-        } else if (randomButton == "B") {
-            enabledButton = GameButtons.B;
-        } else if (randomButton == "X") {
-            enabledButton = GameButtons.X;
-        } else if (randomButton == "Y") {
-            enabledButton = GameButtons.Y;
-        }
+        enabledButton = buttons[randomIndex];
     }
 
     public void EndGame() {
-        currentGameState = GameState.GameNonStarted;
+        currentGameState = GameState.GameNotStarted;
     }
 
     public void UpdatePlayerScore(int playerIndex) {
