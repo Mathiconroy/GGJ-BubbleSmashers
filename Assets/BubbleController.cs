@@ -21,10 +21,17 @@ public class BubbleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jumpAction.WasPressedThisFrame()) {
-            bubble.transform.localScale += upscalingChange;
-        } else if (bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
+        // if (jumpAction.WasPressedThisFrame()) {
+        //     bubble.transform.localScale += upscalingChange;
+        // } else if (bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
+        //     bubble.transform.localScale += downsclaingChange;
+        // }
+        if (bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
             bubble.transform.localScale += downsclaingChange;
         }
+    }
+
+    public void OnInflate() {
+        bubble.transform.localScale += upscalingChange;
     }
 }
