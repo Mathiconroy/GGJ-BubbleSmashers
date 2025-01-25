@@ -26,6 +26,8 @@ public class BubbleController : MonoBehaviour
         } else if (playerInput.playerIndex == 1) {
             spriteRenderer.sprite = gameController.playerTwoSprite;
         }
+        scalingChangeInflateDeflate = new(0.25f, 0.25f, 0);
+        maximumScale = new(4, 4, 0);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +54,7 @@ public class BubbleController : MonoBehaviour
                 bubble.transform.localScale += upscalingChange;
             }
         }
-        if (gameController.HasGameStarted() && gameController.IsInflateDeflate()) {
+        if (gameController.HasGameStarted() && gameController.IsInflateDeflate() && HasReachedMaxScale() == false) {
             bubble.transform.localScale += scalingChangeInflateDeflate;
             CheckAndUpdateScoreInflateDeflate();
         }
@@ -65,8 +67,8 @@ public class BubbleController : MonoBehaviour
                 bubble.transform.localScale += upscalingChange;
             }
         }
-        if (gameController.HasGameStarted() && gameController.IsInflateDeflate()) {
-            bubble.transform.localScale += scalingChangeInflateDeflate;
+        if (gameController.HasGameStarted() && gameController.IsInflateDeflate() && HasReachedMinScale() == false) {
+            bubble.transform.localScale -= scalingChangeInflateDeflate;
             CheckAndUpdateScoreInflateDeflate();
         }
     }
@@ -91,6 +93,14 @@ public class BubbleController : MonoBehaviour
 
     public bool HasReachedMaxScale() {
         if (bubble.transform.localScale.x >= maximumScale.x && bubble.transform.localScale.y >= maximumScale.y) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public bool HasReachedMinScale() {
+        if (bubble.transform.localScale.x <= 1 && bubble.transform.localScale.y <= 1) {
             return true;
         } else {
             return false;
