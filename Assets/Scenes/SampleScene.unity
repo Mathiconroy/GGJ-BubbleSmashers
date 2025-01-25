@@ -742,6 +742,8 @@ MonoBehaviour:
   scorePerPress: 100
   scoreSubstractionPerFrame: 2
   playerScores: 0000000000000000
+  playerOneSprite: {fileID: 1346796328488424763, guid: 2192e51490cb1b8d6880048b008ac8bb, type: 3}
+  playerTwoSprite: {fileID: -567336100165788545, guid: e9bf833fbd338e8d7a602a07638ce857, type: 3}
 --- !u!4 &812008828
 Transform:
   m_ObjectHideFlags: 0

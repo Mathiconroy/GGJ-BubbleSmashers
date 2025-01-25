@@ -12,10 +12,18 @@ public class BubbleController : MonoBehaviour
     public GameController gameController;
     public PlayerInput playerInput;
     public int playerScore = 0;
+    public Sprite sprite;
+    private SpriteRenderer spriteRenderer;
 
     void Awake() {
         gameController = FindAnyObjectByType<GameController>();
         playerInput = GetComponent<PlayerInput>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (playerInput.playerIndex == 0) {
+            spriteRenderer.sprite = gameController.playerOneSprite;
+        } else if (playerInput.playerIndex == 1) {
+            spriteRenderer.sprite = gameController.playerTwoSprite;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

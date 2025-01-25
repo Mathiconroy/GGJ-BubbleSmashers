@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     public int scorePerPress = 200;
     public int scoreSubstractionPerFrame = 2;
     public int[] playerScores;
+    public Sprite playerOneSprite;
+    public Sprite playerTwoSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
