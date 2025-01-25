@@ -9,22 +9,26 @@ public class BubbleController : MonoBehaviour
     public Vector3 downsclaingChange;
     private Vector3 minimumScale;
     InputAction jumpAction;
+    public GameController gameController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameController = FindAnyObjectByType<GameController>();
         minimumScale = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
+        if (gameController.IsGameStarted() && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
             bubble.transform.localScale += downsclaingChange;
         }
     }
 
     public void OnInflate() {
-        bubble.transform.localScale += upscalingChange;
+        if (gameController.IsGameStarted()) {
+            bubble.transform.localScale += upscalingChange;
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerManagerController : MonoBehaviour
 {
     public GameObject[] playerSpawnPoints;
+    public GameObject gameController;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +19,10 @@ public class PlayerManagerController : MonoBehaviour
     }
 
     void OnPlayerJoined(PlayerInput playerInput) {
-        Debug.Log(playerInput);
         playerInput.gameObject.transform.position = playerSpawnPoints[playerInput.playerIndex].transform.position;
-        Debug.Log("Player joined");
+        Debug.Log(playerInput.playerIndex);
+        if (playerInput.playerIndex >= 1) {
+            // gameController.StartGame();
+        }
     }
 }
