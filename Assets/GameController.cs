@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
     public int[] playerScores;
     public Sprite playerOneSprite;
     public Sprite playerTwoSprite;
+    public Vector3 objectiveScaleInflateDeflate;
+    public GameObject playerOneShadow;
+    public GameObject playerTwoShadow;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +44,9 @@ public class GameController : MonoBehaviour
         playerScores[0] = 0;
         playerScores[1] = 0;
         currentGameState = GameState.GameNotStarted;
+        if (IsInflateDeflate()) {
+            GenerateObjectiveInflateDeflate();
+        }
     }
 
     // Update is called once per frame
@@ -48,14 +54,17 @@ public class GameController : MonoBehaviour
     {
         if (HasGameStarted()) {
             gameDuration -= Time.deltaTime;
-            timeToChange -= Time.deltaTime;
-            if (timeToChange <= 0) {
-                System.Random random = new();
-                float newNumber = random.Next(1, 3);
-                timeToChange = newNumber;
-                ChangeEnabledButton();
-                Debug.Log("Input changed.");
+            
+            if (IsRandomButtons()) {
+                timeToChange -= Time.deltaTime;
+                if (timeToChange <= 0) {
+                    System.Random random = new();
+                    float newNumber = random.Next(1, 3);
+                    timeToChange = newNumber;
+                    ChangeEnabledButton();
+                }
             }
+
             if (gameDuration <= 0) {
                 EndGame();
             }
@@ -104,6 +113,9 @@ public class GameController : MonoBehaviour
 
     public void UpdatePlayerScore(int playerIndex) {
         playerScores[playerIndex] += scorePerPress;
+        if (IsInflateDeflate()) {
+            GenerateObjectiveInflateDeflate();
+        }
     }
 
     public void SubstractFromScore() {
@@ -121,5 +133,17 @@ public class GameController : MonoBehaviour
 
     public bool IsRandomButtons() {
         return gameMode == GameModes.RandomButtons;
+    }
+
+    public Vector3 GetObjectiveScale() {
+        return objectiveScaleInflateDeflate;
+    }
+
+    public void GenerateObjectiveInflateDeflate() {
+        System.Random random = new();
+        float newScalingObjectiveValue = 1 + 0.25f * random.Next(1, 12);
+        objectiveScaleInflateDeflate = new(newScalingObjectiveValue, newScalingObjectiveValue, 0);
+        playerOneShadow.transform.localScale = objectiveScaleInflateDeflate;
+        playerTwoShadow.transform.localScale = objectiveScaleInflateDeflate;
     }
 }
