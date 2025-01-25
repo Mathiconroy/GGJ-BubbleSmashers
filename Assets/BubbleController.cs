@@ -25,14 +25,12 @@ public class BubbleController : MonoBehaviour
     void Update()
     {
         if (gameController.HasGameStarted() == true && bubble.transform.localScale.x > 0 && bubble.transform.localScale.y > 0) {
-            Debug.Log("Downsclaing...");
             bubble.transform.localScale += downsclaingChange;
         }
     }
 
     public void OnInflate() {
         if (gameController.HasGameStarted() == true) {
-            Debug.Log("Upscaling...");
             bubble.transform.localScale += upscalingChange;
         }
     }
