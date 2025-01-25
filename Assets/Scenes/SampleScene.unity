@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9e2a1f801971159ab261ac78fec1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: 0
   enabledButton: 0
   currentGameState: 1
   inputActions: {fileID: -944628639613478452, guid: 9547001c61582724894ebf550c5b4921, type: 3}
