@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 4122955543777438328}
-  upscalingChange: {x: 0.25, y: 0.25, z: 0}
+  upscalingChange: {x: 0.1, y: 0.1, z: 0}
   downscalingChange: {x: 0, y: 0, z: 0}
   scalingChangeInflateDeflate: {x: 0.25, y: 0.25, z: 0}
   maximumScale: {x: 0, y: 0, z: 0}
