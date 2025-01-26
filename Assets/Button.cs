@@ -7,6 +7,10 @@ public class Button : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentButtonPlayer1;
     [SerializeField] TextMeshProUGUI currentButtonPlayer2;
     GameController gameController;
+    public Sprite aButtonSprite;
+    public Sprite bButtonSprite;
+    public Sprite xButtonSprite;
+    public Sprite yButtonSprite;
     string currentButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
