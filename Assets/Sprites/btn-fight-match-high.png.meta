@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9a537193a254c1442bbd294bf4a96694
+guid: ca3f31948db649548aa54fdacaba2971
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8158265256486050621
-    second: cover_0
+      213: 4292356604367753443
+    second: btn-fight-match-high_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cover_0
+      name: btn-fight-match-high_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2880
-        height: 1836
+        width: 282
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3b1344c60bf73170800000000000000
-      internalID: 8158265256486050621
+      spriteID: 3e054acf693819b30800000000000000
+      internalID: 4292356604367753443
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      cover_0: 8158265256486050621
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
