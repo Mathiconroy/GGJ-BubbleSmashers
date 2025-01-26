@@ -11,11 +11,13 @@ public class ContinueButton : MonoBehaviour
         // Comprueba si hay datos de guardado
         if (PlayerPrefs.HasKey("SavedScene"))
         {
-            disabled = false; // Habilita el botón si hay una partida guardada.
+            disabled = false;
+            this.gameObject.SetActive(true);
         }
         else
         {
-            disabled = true; // Deshabilita el botón si no hay datos de guardado.
+            disabled = true;
+            this.gameObject.SetActive(false);
         }
     }
 
