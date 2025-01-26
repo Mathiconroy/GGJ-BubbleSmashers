@@ -966,7 +966,7 @@ MonoBehaviour:
   - {fileID: 2090404511}
   - {fileID: 2098582037}
   gameController: {fileID: 812008827}
-  minimumPlayerCount: 1
+  minimumPlayerCount: 2
   playerOneShadow: {fileID: 1015002187}
   playerTwoShadow: {fileID: 702249511}
 --- !u!1 &812008826
@@ -1011,6 +1011,8 @@ MonoBehaviour:
   objectiveScaleInflateDeflate: {x: 0, y: 0, z: 0}
   playerOneShadow: {fileID: 1015002187}
   playerTwoShadow: {fileID: 702249511}
+  playerOneWonRounds: 0
+  playerTwoWonRounds: 0
 --- !u!4 &812008828
 Transform:
   m_ObjectHideFlags: 0
