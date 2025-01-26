@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class GameController : MonoBehaviour
 {
     public enum GameModes {
@@ -43,9 +42,11 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (GameMode.Mode == 0) {
+        System.Random random = new();
+        int randomGameMode = random.Next(0, 2);
+        if (randomGameMode == 0) {
             gameMode = GameModes.RandomButtons;
-        } else if (GameMode.Mode == 1) {
+        } else if (randomGameMode == 1) {
             gameMode = GameModes.InflateDeflate;
         }
         playerScores[0] = 0;
