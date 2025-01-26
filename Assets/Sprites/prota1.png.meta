@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d4a39f1bb1c722cd28237881303b4741
+guid: cf7bf7d7aebb3a7dea9cf012de75183e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1012649809328909675
-    second: masticar01_0
+      213: -5764823363187949694
+    second: Prota 1 iniio_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: masticar01_0
+      name: Prota 1 iniio_0
       rect:
         serializedVersion: 2
         x: 9
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59255191d5852f1f0800000000000000
-      internalID: -1012649809328909675
+      spriteID: 28f3f4cc1bb3fffa0800000000000000
+      internalID: -5764823363187949694
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      masticar01_0: -1012649809328909675
+      Prota 1 iniio_0: -5764823363187949694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
