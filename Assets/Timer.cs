@@ -5,16 +5,17 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     float elapsedTime;
-    // Update is called once per frame
+    GameController gameController;
 
     private void Start()
     {
-        GameController gameController = FindAnyObjectByType<GameController>();
+        gameController = FindAnyObjectByType<GameController>();
         elapsedTime = gameController.gameDuration;
     }
+    
+    // Update is called once per frame
     void Update()
     {
-        GameController gameController = FindAnyObjectByType<GameController>();
         elapsedTime = gameController.gameDuration;
         int seconds = Mathf.FloorToInt(elapsedTime);
         if (seconds > 0)
