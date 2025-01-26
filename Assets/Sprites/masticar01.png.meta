@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e9bf833fbd338e8d7a602a07638ce857
+guid: d4a39f1bb1c722cd28237881303b4741
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -567336100165788545
-    second: azul08_0
+      213: -1012649809328909675
+    second: masticar01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: azul08_0
+      name: masticar01_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 128
-        height: 128
+        width: 20
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7cdc51a2da6028f0800000000000000
-      internalID: -567336100165788545
+      spriteID: 59255191d5852f1f0800000000000000
+      internalID: -1012649809328909675
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      azul08_0: -567336100165788545
+      masticar01_0: -1012649809328909675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
