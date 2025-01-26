@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ContinueButton : MonoBehaviour
 {
     private int sceneToContinue;
+    public bool disabled = false;
 
     public void ContinueGame ()
     {
