@@ -9,4 +9,14 @@ public class StartButton : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void StartGame_1()
+    { 
+        SceneManager.LoadScene(1); 
+    }
+
+    public void StartGame_2()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
