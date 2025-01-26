@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
     public GameObject playerTwoShadow;
     public int playerOneWonRounds;
     public int playerTwoWonRounds;
+    public GameObject playerOneWinSprite;
+    public GameObject playerTwoWinSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -121,6 +123,14 @@ public class GameController : MonoBehaviour
 
     public void EndGame() {
         currentGameState = GameState.GameNotStarted;
+        if (playerScores[0] > playerScores[1]) {
+            playerOneWinSprite.SetActive(true);
+        } else if (playerScores[0] < playerScores[1]) {
+            playerTwoWinSprite.SetActive(true);
+        } else {
+            playerOneWinSprite.SetActive(true);
+            playerTwoWinSprite.SetActive(true);
+        }
     }
 
     public void ResetGame() {
