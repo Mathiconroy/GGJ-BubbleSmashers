@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 40
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   playerScore: 0
   sprite: {fileID: 0}
+  inflateDeflateObjectiveSprite: {fileID: 0}
 --- !u!114 &6197039324301961858
 MonoBehaviour:
   m_ObjectHideFlags: 0
