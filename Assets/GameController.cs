@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     public GameButtons enabledButton;
     public GameState currentGameState;
     public InputActionAsset inputActions;
-    float timeToChange = 3.0f;
+    float timeToChange = 2.0f;
     public float gameDuration = 20.0f;
     public int scorePerPress = 200;
     public int scoreSubstractionPerFrame = 2;
@@ -44,8 +44,6 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Debug.Log(PlayerPrefs.GetInt("play_mode"));
-        System.Random random = new();
         int randomGameMode = PlayerPrefs.GetInt("play_mode");
         if (randomGameMode == 0) {
             gameMode = GameModes.RandomButtons;
@@ -74,7 +72,7 @@ public class GameController : MonoBehaviour
                 timeToChange -= Time.deltaTime;
                 if (timeToChange <= 0) {
                     System.Random random = new();
-                    float newNumber = random.Next(2, 3);
+                    float newNumber = random.Next(1, 3);
                     timeToChange = newNumber;
                     ChangeEnabledButton();
                 }
