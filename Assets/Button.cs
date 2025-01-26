@@ -1,13 +1,16 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI currentButtonPlayer1;
-    [SerializeField] TextMeshProUGUI currentButtonPlayer2;
+    public GameObject currentButtonImage;
     GameController gameController;
-    string currentButton;
+    public Sprite aButtonSprite;
+    public Sprite bButtonSprite;
+    public Sprite xButtonSprite;
+    public Sprite yButtonSprite;
+    [SerializeField] Sprite currentButtonSprite;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +19,7 @@ public class Button : MonoBehaviour
         if (gameController.IsRandomButtons()) {
             SetCurrentButton();
         } else if (gameController.IsInflateDeflate()) {
-            currentButtonPlayer1.gameObject.SetActive(false);
+            currentButtonImage.SetActive(false);
         }
     }
 
@@ -25,27 +28,26 @@ public class Button : MonoBehaviour
     {
         if (gameController.IsRandomButtons()) {
             SetCurrentButton();
-            currentButtonPlayer1.text = currentButton;
-            currentButtonPlayer2.text = currentButton;
+            currentButtonImage.GetComponent<Image>().sprite = currentButtonSprite;
         }
     }
 
     void SetCurrentButton() {
         if (gameController.IsAButtonEnabled() == true)
         {
-            currentButton = "A";
+            currentButtonSprite = aButtonSprite;
         }
         if (gameController.IsBButtonEnabled() == true)
         {
-            currentButton = "B";
+            currentButtonSprite = bButtonSprite;
         }
         if (gameController.IsYButtonEnabled() == true)
         {
-            currentButton = "Y";
+            currentButtonSprite = yButtonSprite;
         }
         if (gameController.IsXButtonEnabled() == true)
         {
-            currentButton = "X";
+            currentButtonSprite = xButtonSprite;
         }
     }
 }
