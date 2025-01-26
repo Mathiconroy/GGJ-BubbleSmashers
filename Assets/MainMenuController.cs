@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape)  || Input.GetKeyUp(KeyCode.Return))
+        {
+            ExitGame();
+        }
+    }
     // Método para cargar la escena del juego
     public void PlayGame()
     {
