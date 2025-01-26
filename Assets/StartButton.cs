@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Start()
+    {
+        
+    }
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void StartGame_1()

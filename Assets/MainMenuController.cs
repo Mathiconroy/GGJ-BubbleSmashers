@@ -16,7 +16,7 @@ public class MainMenuController : MonoBehaviour
     // Método para cargar la escena del juego
     public void PlayGame()
     {
-        SceneManager.LoadScene("SelectGameScene"); // Reemplaza "GameScene" con el nombre de tu escena de juego
+        SceneManager.LoadScene("SelectGameScene"); 
     }
 
     // Método para mostrar las opciones (puedes implementar más tarde)
