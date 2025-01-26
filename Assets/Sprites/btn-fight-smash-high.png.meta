@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      btn-fight-smash-high_0: 910499309017985829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
