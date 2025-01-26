@@ -44,8 +44,9 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Debug.Log(PlayerPrefs.GetInt("play_mode"));
         System.Random random = new();
-        int randomGameMode = random.Next(0, 2);
+        int randomGameMode = PlayerPrefs.GetInt("play_mode");
         if (randomGameMode == 0) {
             gameMode = GameModes.RandomButtons;
         } else if (randomGameMode == 1) {
