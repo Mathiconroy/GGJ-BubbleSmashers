@@ -1100,6 +1100,8 @@ MonoBehaviour:
   playerTwoShadow: {fileID: 702249511}
   playerOneWonRounds: 0
   playerTwoWonRounds: 0
+  playerOneWinSprite: {fileID: 935320871}
+  playerTwoWinSprite: {fileID: 1530523834}
 --- !u!4 &812008828
 Transform:
   m_ObjectHideFlags: 0
@@ -1126,12 +1128,12 @@ GameObject:
   - component: {fileID: 935320872}
   - component: {fileID: 935320873}
   m_Layer: 0
-  m_Name: WinSprite
+  m_Name: PlayerOneWinSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &935320872
 Transform:
   m_ObjectHideFlags: 0
@@ -1600,12 +1602,12 @@ GameObject:
   - component: {fileID: 1530523835}
   - component: {fileID: 1530523836}
   m_Layer: 0
-  m_Name: WinSprite
+  m_Name: PlayerTwoWinSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1530523835
 Transform:
   m_ObjectHideFlags: 0
