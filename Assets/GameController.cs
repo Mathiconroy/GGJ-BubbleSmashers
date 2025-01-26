@@ -36,11 +36,12 @@ public class GameController : MonoBehaviour
     public Vector3 objectiveScaleInflateDeflate;
     public GameObject playerOneShadow;
     public GameObject playerTwoShadow;
+    public int playerOneWonRounds;
+    public int playerTwoWonRounds;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // enabledButton = GameButtons.A;
         playerScores[0] = 0;
         playerScores[1] = 0;
         currentGameState = GameState.GameNotStarted;
@@ -63,7 +64,7 @@ public class GameController : MonoBehaviour
                 timeToChange -= Time.deltaTime;
                 if (timeToChange <= 0) {
                     System.Random random = new();
-                    float newNumber = random.Next(1, 3);
+                    float newNumber = random.Next(2, 3);
                     timeToChange = newNumber;
                     ChangeEnabledButton();
                 }
@@ -113,6 +114,10 @@ public class GameController : MonoBehaviour
 
     public void EndGame() {
         currentGameState = GameState.GameNotStarted;
+    }
+
+    public void ResetGame() {
+
     }
 
     public void UpdatePlayerScore(int playerIndex) {
