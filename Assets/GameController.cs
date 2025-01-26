@@ -43,6 +43,11 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (GameMode.Mode == 0) {
+            gameMode = GameModes.RandomButtons;
+        } else if (GameMode.Mode == 1) {
+            gameMode = GameModes.InflateDeflate;
+        }
         playerScores[0] = 0;
         playerScores[1] = 0;
         currentGameState = GameState.GameNotStarted;
