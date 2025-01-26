@@ -6,34 +6,31 @@ public class Button : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI currentButtonPlayer1;
     [SerializeField] TextMeshProUGUI currentButtonPlayer2;
+    GameController gameController;
     string currentButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameController gameController = FindAnyObjectByType<GameController>();
+        gameController = FindAnyObjectByType<GameController>();
 
-        if (gameController.IsAButtonEnabled() == true)
-        {
-            currentButton = "A";
-        }
-        if (gameController.IsBButtonEnabled() == true)
-        {
-            currentButton = "B";
-        }
-        if (gameController.IsYButtonEnabled() == true)
-        {
-            currentButton = "Y";
-        }
-        if (gameController.IsXButtonEnabled() == true)
-        {
-            currentButton = "X";
+        if (gameController.IsRandomButtons()) {
+            SetCurrentButton();
+        } else if (gameController.IsInflateDeflate()) {
+            currentButtonPlayer1.gameObject.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameController gameController = FindAnyObjectByType<GameController>();
+        if (gameController.IsRandomButtons()) {
+            SetCurrentButton();
+            currentButtonPlayer1.text = currentButton;
+            currentButtonPlayer2.text = currentButton;
+        }
+    }
+
+    void SetCurrentButton() {
         if (gameController.IsAButtonEnabled() == true)
         {
             currentButton = "A";
@@ -50,7 +47,5 @@ public class Button : MonoBehaviour
         {
             currentButton = "X";
         }
-        currentButtonPlayer1.text = currentButton;
-        currentButtonPlayer2.text = currentButton;
     }
 }
