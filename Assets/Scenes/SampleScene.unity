@@ -1089,7 +1089,7 @@ MonoBehaviour:
   enabledButton: 0
   currentGameState: 1
   inputActions: {fileID: -944628639613478452, guid: 9547001c61582724894ebf550c5b4921, type: 3}
-  gameDuration: 20
+  gameDuration: 5
   scorePerPress: 100
   scoreSubstractionPerFrame: 2
   playerScores: 0000000000000000

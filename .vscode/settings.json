@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GGJ - Bubble Smashers.sln"
+    "dotnet.defaultSolution": "GGJ-BubbleSmashers.sln"
 }

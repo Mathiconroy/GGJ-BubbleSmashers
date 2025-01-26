@@ -16,13 +16,14 @@ public class toMenu : MonoBehaviour
     {
         disabled = Convert.ToBoolean(gameController.currentGameState);
 
-        if (!disabled)
-        {
-            this.gameObject.SetActive(false);
-        } else
-        {
-            this.gameObject.SetActive(true);
-        }
+        // if (gameController.HasGameStarted())
+        // {
+        //     gameObject.SetActive(false);
+        // } else
+        // {
+        //     Debug.Log("Button should be enabled");
+        //     gameObject.SetActive(true);
+        // }
 
         if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.Return))
         {
