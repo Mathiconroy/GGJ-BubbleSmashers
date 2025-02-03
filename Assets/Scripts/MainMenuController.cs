@@ -6,13 +6,14 @@ public class MainMenuController : MonoBehaviour
     public enum Screens {
         MainMenu,
         Credits,
-        GameSelect,
+        GameModeSelect,
     }
 
     public Screens currentScreen = Screens.MainMenu;
     public Button continueButton;
     public GameObject mainMenuObject;
     public GameObject creditsObject;
+    public GameObject gameModeSelectObject;
 
     void Update()
     {
@@ -48,13 +49,32 @@ public class MainMenuController : MonoBehaviour
 
     public void ToCredits() {
         currentScreen = Screens.Credits;
-        mainMenuObject.SetActive(false);
         creditsObject.SetActive(true);
+        mainMenuObject.SetActive(false);
+        gameModeSelectObject.SetActive(false);
     }
 
     public void ToMainMenu() {
         currentScreen = Screens.MainMenu;
         mainMenuObject.SetActive(true);
         creditsObject.SetActive(false);
+        gameModeSelectObject.SetActive(false);
+    }
+
+    public void ToGameModeSelect() {
+        currentScreen = Screens.GameModeSelect;
+        gameModeSelectObject.SetActive(true);
+        creditsObject.SetActive(false);
+        mainMenuObject.SetActive(false);
+    }
+
+    public void ToMatchGame() {
+        PlayerPrefs.SetInt("play_mode", 1);
+        SceneManager.LoadScene(1);
+    }
+
+    public void ToSmashGame() {
+        PlayerPrefs.SetInt("play_mode", 0);
+        SceneManager.LoadScene(1);
     }
 }

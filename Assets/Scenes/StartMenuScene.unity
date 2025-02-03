@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 132356426}
   - component: {fileID: 132356429}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: SmashButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 203106953}
   - component: {fileID: 203106952}
   m_Layer: 5
-  m_Name: btn B
+  m_Name: BButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 493276068}
   - component: {fileID: 493276067}
   m_Layer: 5
-  m_Name: btn A
+  m_Name: AButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 578653910}
   - component: {fileID: 578653913}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 818561617}
   - component: {fileID: 818561620}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: MatchButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 2112290859}
   - component: {fileID: 2112290858}
   m_Layer: 5
-  m_Name: Match text
+  m_Name: MatchText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 2138782341}
   - component: {fileID: 2138782340}
   m_Layer: 5
-  m_Name: Smash text
+  m_Name: SmashText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
