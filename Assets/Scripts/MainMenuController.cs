@@ -1,10 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
+    public enum Screens {
+        MainMenu,
+        Credits,
+        GameSelect,
+    }
+
+    public Screens currentScreen = Screens.MainMenu;
     public Button continueButton;
+    public GameObject mainMenuObject;
+    public GameObject creditsObject;
 
     void Update()
     {
@@ -13,13 +21,13 @@ public class MainMenuController : MonoBehaviour
             ExitGame();
         }
     }
-    // MÈtodo para cargar la escena del juego
+    // M√©todo para cargar la escena del juego
     public void PlayGame()
     {
         SceneManager.LoadScene("SelectGameScene"); 
     }
 
-    // MÈtodo para mostrar las opciones (puedes implementar m·s tarde)
+    // M√©todo para mostrar las opciones (puedes implementar m√°s tarde)
     public void ContinueGame()
     {
         SceneManager.LoadScene("SelectGameScene");
@@ -32,10 +40,21 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Partida guardada: " + sceneName);
     }
 
-    // MÈtodo para salir del juego
+    // M√©todo para salir del juego
     public void ExitGame()
     {
-        Debug.Log("Saliendo del juego...");
         Application.Quit();
+    }
+
+    public void ToCredits() {
+        currentScreen = Screens.Credits;
+        mainMenuObject.SetActive(false);
+        creditsObject.SetActive(true);
+    }
+
+    public void ToMainMenu() {
+        currentScreen = Screens.MainMenu;
+        mainMenuObject.SetActive(true);
+        creditsObject.SetActive(false);
     }
 }
